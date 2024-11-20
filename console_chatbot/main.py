@@ -13,7 +13,7 @@ console = Console()
 
 print("digite 'sair' para  sair")
 while True:
-    user_input = input("usuario: ")
+    user_input = console.input(Markdown("## usuario: "))
 
     if user_input.lower() == "sair":
         break
@@ -28,4 +28,4 @@ while True:
 
     bot_response = response.choices[0].message.content
     chat_log.append({"role": "assistant", "content": bot_response})
-    console.print(Markdown(bot_response))
+    console.print(Markdown(f"## assistente: \n  {bot_response}"))
